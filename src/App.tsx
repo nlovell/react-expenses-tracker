@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <h2>Let's get cracking!</h2>
       <p>By writing some words and adding a component.</p>
+
       <ExpenseItem {...expenses[0]} />
       <ExpenseItem {...expenses[1]} />
       <ExpenseItem {...expenses[2]} />

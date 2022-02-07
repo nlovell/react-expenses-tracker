@@ -18,6 +18,20 @@
   flex: 1;
 }
 
+.expense-item__date {
+  width: 5em;
+  color: white;
+  background-color: #3218a7;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.expense-item__date__day {
+  font-size: 2em;
+  font-weight: bold;
+}
+
 .expense-item h2 {
   color: #1329a5;
   font-size: 1rem;
