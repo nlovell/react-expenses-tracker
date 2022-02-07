@@ -1,12 +1,19 @@
 import "../css/ExpenseItem.css";
 
-function ExpenseItem() {
+export declare interface ItemData {
+  date: Date;
+  title: string;
+  cost: number;
+}
+//export type ItemDataProp = ItemData[];
+
+function ExpenseItem(data: ItemData) {
   return (
     <div className="expense-item">
-      <div>22/03/2022</div>
+      <div>{data.date.toDateString()}</div>
       <div className="expense-item__description">
-        <h2>Ibanez BTB845 - Cerulean</h2>
-        <div className="expense-item__price">£849</div>
+        <h2>{data.title}</h2>
+        <div className="expense-item__price">£{data.cost}</div>
       </div>
     </div>
   );
