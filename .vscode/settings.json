@@ -1,0 +1,5 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.run": "onSave",
+    "eslint.alwaysShowStatus": true
+}
