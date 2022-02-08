@@ -1,11 +1,20 @@
-export declare interface ExpenseDateObj {
+import { VFC } from "react";
+
+interface IExpenseDate {
   date: Date;
+  notADate?: string;
 }
 
-function ExpenseDate(obj: { date: Date }) {
-  let month = obj.date.toLocaleString("en-US", { month: "long" });
-  let day = obj.date.toLocaleString("en-US", { day: "numeric" });
-  let year = obj.date.toLocaleString("en-US", { year: "numeric" });
+/**
+ * Component for displaying Expense Dates
+ *
+ * @param date an ExpenseDateData object
+ * @returns the expense date JSX
+ */
+const ExpenseDate: VFC<IExpenseDate> = ({ date, notADate = "default" }) => {
+  let month = date.toLocaleString("en-US", { month: "long" });
+  let day = date.toLocaleString("en-US", { day: "numeric" });
+  let year = date.toLocaleString("en-US", { year: "numeric" });
 
   return (
     <div className="expense-item__date">
@@ -14,6 +23,6 @@ function ExpenseDate(obj: { date: Date }) {
       <div className="expense-item__date__year">{year}</div>
     </div>
   );
-}
+};
 
 export default ExpenseDate;

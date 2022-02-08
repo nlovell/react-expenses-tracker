@@ -1,10 +1,8 @@
-import React from "react";
-import ExpenseItem from "./components/ExpenseItem";
-import { ItemData } from "./components/ExpenseItem";
+import ExpenseItem, { IExpenseItem } from "./components/ExpenseItem";
 import "./css/App.css";
 
 function App() {
-  let expenses: ItemData[] = [
+  let expenses: IExpenseItem[] = [
     { title: "Bass", cost: 349.99, date: new Date(2022, 1, 22) },
     { title: "Electric", cost: 249.99, date: new Date(2022, 2, 6) },
     { title: "Acoustic", cost: 449.99, date: new Date(2022, 5, 12) },
