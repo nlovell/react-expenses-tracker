@@ -2,7 +2,6 @@ import { VFC } from "react";
 
 interface IExpenseDate {
   date: Date;
-  notADate?: string;
 }
 
 /**
@@ -11,7 +10,7 @@ interface IExpenseDate {
  * @param date an ExpenseDateData object
  * @returns the expense date JSX
  */
-const ExpenseDate: VFC<IExpenseDate> = ({ date, notADate = "default" }) => {
+const ExpenseDate: VFC<IExpenseDate> = ({ date }) => {
   let month = date.toLocaleString("en-US", { month: "long" });
   let day = date.toLocaleString("en-US", { day: "numeric" });
   let year = date.toLocaleString("en-US", { year: "numeric" });
