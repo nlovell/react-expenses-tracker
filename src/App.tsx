@@ -1,4 +1,6 @@
-import ExpenseItem, { IExpenseItem } from "./components/ExpenseItem";
+import { IExpenseItem } from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
+
 import "./css/App.css";
 
 function App() {
@@ -14,10 +16,7 @@ function App() {
       <h2>Let's get cracking!</h2>
       <p>By writing some words and adding a component.</p>
 
-      <ExpenseItem {...expenses[0]} />
-      <ExpenseItem {...expenses[1]} />
-      <ExpenseItem {...expenses[2]} />
-      <ExpenseItem {...expenses[3]} />
+      <Expenses items={expenses} />
     </div>
   );
 }
