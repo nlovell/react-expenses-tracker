@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import Card from "../Card/Card";
+import Card from "../UI/Card/Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 

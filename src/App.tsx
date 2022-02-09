@@ -1,9 +1,9 @@
-import Card from "./components/Card/Card";
-import { IExpenseItem } from "./components/ExpenseItem/ExpenseItem";
-import Expenses from "./components/ExpenseItem/Expenses";
+import { IExpenseItem } from "./components/Expenses/ExpenseItem";
+import Expenses from "./components/Expenses/Expenses";
+import Card from "./components/UI/Card/Card";
 import "./css/App.css";
 
-function App() {
+const App = () => {
   let expenses: IExpenseItem[] = [
     { title: "Bass", cost: 349.99, date: new Date(2022, 1, 22) },
     { title: "Electric", cost: 249.99, date: new Date(2022, 2, 6) },
@@ -21,6 +21,6 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
