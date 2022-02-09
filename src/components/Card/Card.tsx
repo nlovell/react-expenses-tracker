@@ -1,6 +1,5 @@
-import "./Card.css";
-
 import { ReactChild, ReactChildren, VFC } from "react";
+import "./Card.css";
 
 interface ICardContent {
   children: ReactChild | ReactChild[] | ReactChildren[];
