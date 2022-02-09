@@ -3,9 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(68, 125, 212);
-  border-radius: 25px;
-  margin: 20px;
-  padding: 20px;
 }
 
 .expense-item__description {

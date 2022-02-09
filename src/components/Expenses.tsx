@@ -1,4 +1,5 @@
 import { VFC } from "react";
+import Card from "./Card";
 import ExpenseItem, { IExpenseItem } from "./ExpenseItem";
 
 interface IExpenseItems {
@@ -13,11 +14,11 @@ interface IExpenseItems {
  */
 const Expenses: VFC<IExpenseItems> = ({ items }) => {
   return (
-    <div className="expense-items">
+    <Card>
       {items.map(({ date, title, cost }) => (
         <ExpenseItem key={title + date} date={date} title={title} cost={cost} />
       ))}
-    </div>
+    </Card>
   );
 };
 

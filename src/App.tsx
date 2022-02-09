@@ -1,3 +1,4 @@
+import Card from "./components/Card";
 import { IExpenseItem } from "./components/ExpenseItem";
 import Expenses from "./components/Expenses";
 
@@ -13,8 +14,10 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Let's get cracking!</h2>
-      <p>By writing some words and adding a component.</p>
+      <Card>
+        <h2>Let's get cracking!</h2>
+        <p>By writing some words and adding a component.</p>
+      </Card>
 
       <Expenses items={expenses} />
     </div>
