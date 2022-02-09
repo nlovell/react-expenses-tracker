@@ -15,9 +15,18 @@ interface IExpenseItems {
 const Expenses: VFC<IExpenseItems> = ({ items }) => {
   return (
     <Card>
-      {items.map(({ date, title, cost }) => (
-        <ExpenseItem key={title + date} date={date} title={title} cost={cost} />
-      ))}
+      <div>
+        <h2>Logged Expenses</h2>
+
+        {items.map(({ date, title, cost }) => (
+          <ExpenseItem
+            key={title + date}
+            date={date}
+            title={title}
+            cost={cost}
+          />
+        ))}
+      </div>
     </Card>
   );
 };

@@ -1,4 +1,4 @@
-import { VFC } from "react";
+import { useState, VFC } from "react";
 import Card from "../UI/Card/Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
@@ -16,13 +16,23 @@ export interface IExpenseItem {
  * @returns the expense item JSX
  */
 const ExpenseItem: VFC<IExpenseItem> = ({ date, title, cost }) => {
+  const [expenseTitle, setExpenseTitle] = useState(title);
+  console.log("Item Evaluated by React");
+
+  const clickHandler = () => {
+    console.log("Clicked.");
+    setExpenseTitle("Clicked");
+  };
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{expenseTitle}</h2>
         <div className="expense-item__price">£{cost}</div>
       </div>
+
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 };

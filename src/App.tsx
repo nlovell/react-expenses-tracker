@@ -1,5 +1,6 @@
 import { IExpenseItem } from "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 import Card from "./components/UI/Card/Card";
 import "./css/App.css";
 
@@ -14,10 +15,11 @@ const App = () => {
   return (
     <div className="App">
       <Card>
-        <h2>Let's get cracking!</h2>
-        <p>By writing some words and adding a component.</p>
+        <h2>Expense Tracker</h2>
+        <p>Keep tabs on your spending with this simple React app.</p>
       </Card>
 
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );
