@@ -12,6 +12,11 @@ const App = () => {
     { title: "Ukulele", cost: 149.99, date: new Date(2021, 1, 30) },
   ];
 
+  const addExpenseHandler = (expense: IExpenseItem) => {
+    expenses.push(expense);
+    console.log(expenses);
+  };
+
   return (
     <div className="App">
       <Card>
@@ -19,7 +24,7 @@ const App = () => {
         <p>Keep tabs on your spending with this simple React app.</p>
       </Card>
 
-      <NewExpense />
+      <NewExpense expenseHandler={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

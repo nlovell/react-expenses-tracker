@@ -8,11 +8,20 @@ interface IExpenseForm {
   date: string;
 }
 
+type TExpenseClickHandler = (enteredExpenseData: IExpenseItem) => void;
+
+interface INewExpense {
+  saveHandler: TExpenseClickHandler;
+}
+
+// name : (vars : types [, ...]) => return,
+
 /**
  * Generates Expense Form
+ * @param saveHandler
  * @returns form JSX
  */
-const ExpenseForm = () => {
+const ExpenseForm = ({ saveHandler }: INewExpense) => {
   const [userInput, setUserInput] = useState<IExpenseForm>({
     title: "",
     cost: "",
@@ -35,7 +44,7 @@ const ExpenseForm = () => {
       cost: ~~userInput.cost,
     };
 
-    console.log(expenseData);
+    saveHandler(expenseData);
 
     setUserInput({
       title: "",
