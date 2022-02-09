@@ -29,10 +29,10 @@ const ExpenseItem: VFC<IExpenseItem> = ({ date, title, cost }) => {
       <ExpenseDate date={date} />
       <div className="expense-item__description">
         <h2>{expenseTitle}</h2>
-        <div className="expense-item__price">£{cost}</div>
+        <div className="expense-item__price" onClick={clickHandler}>
+          £{cost}
+        </div>
       </div>
-
-      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 };

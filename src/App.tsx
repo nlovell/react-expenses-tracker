@@ -24,7 +24,7 @@ const App = () => {
         <p>Keep tabs on your spending with this simple React app.</p>
       </Card>
 
-      <NewExpense expenseHandler={addExpenseHandler} />
+      <NewExpense onAddExpenseHandler={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

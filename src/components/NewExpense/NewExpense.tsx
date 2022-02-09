@@ -5,10 +5,12 @@ import ExpenseForm from "./ExpenseForm";
 type TExpenseHandler = (expense: IExpenseItem) => void;
 
 interface IExpenseHandler {
-  expenseHandler: TExpenseHandler;
+  onAddExpenseHandler: TExpenseHandler;
 }
 
-const NewExpense = ({ expenseHandler }: IExpenseHandler) => {
+const NewExpense = ({
+  onAddExpenseHandler: expenseHandler,
+}: IExpenseHandler) => {
   const saveExpenseDataHandler = (enteredExpenseData: IExpenseItem) => {
     const expenseData = {
       ...enteredExpenseData,
