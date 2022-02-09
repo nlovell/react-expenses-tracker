@@ -1,6 +1,6 @@
-import Card from "./components/Card";
-import { IExpenseItem } from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+import Card from "./components/Card/Card";
+import { IExpenseItem } from "./components/ExpenseItem/ExpenseItem";
+import Expenses from "./components/ExpenseItem/Expenses";
 
 import "./css/App.css";
 

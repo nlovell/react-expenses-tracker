@@ -1,4 +1,4 @@
-import "../css/Card.css";
+import "./Card.css";
 
 import { ReactChild, ReactChildren, VFC } from "react";
 

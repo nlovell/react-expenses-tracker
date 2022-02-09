@@ -1,7 +1,7 @@
-import "../css/ExpenseItem.css";
+import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import { VFC } from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 
 export interface IExpenseItem {
   date: Date;
