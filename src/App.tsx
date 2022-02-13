@@ -25,6 +25,7 @@ const App = () => {
       </Card>
 
       <NewExpense onAddExpenseHandler={addExpenseHandler} />
+      
       <Expenses items={expenses} />
     </div>
   );

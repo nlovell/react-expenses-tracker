@@ -40,8 +40,8 @@ const ExpenseForm = ({ saveHandler }: INewExpense) => {
 
     const expenseData: IExpenseItem = {
       title: userInput.title,
-      date: new Date(userInput.date),
       cost: ~~userInput.cost,
+      date: new Date(userInput.date),
     };
 
     saveHandler(expenseData);

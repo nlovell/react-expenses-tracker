@@ -1,4 +1,5 @@
 import { VFC } from "react";
+import ExpenseFilter, { IExpenseFilter } from "../ExpenseFilter/ExpensesFilter";
 import Card from "../UI/Card/Card";
 import ExpenseItem, { IExpenseItem } from "./ExpenseItem";
 
@@ -13,8 +14,19 @@ interface IExpenseItems {
  * @returns a collection of Expense Items JSX
  */
 const Expenses: VFC<IExpenseItems> = ({ items }) => {
+
+  let expensesFilter: IExpenseFilter;
+  const submitExpensesFilterHandler = (submittedFilter : IExpenseFilter) => {
+    expensesFilter = {
+      ...expensesFilter,
+      ...submittedFilter
+    };
+    console.log(submittedFilter.date + " from Expenses.tsx");
+  };
   return (
     <Card>
+      <h2>Expense Filters</h2>
+      <ExpenseFilter filterHandler={submitExpensesFilterHandler}/>
       <div>
         <h2>Logged Expenses</h2>
 
