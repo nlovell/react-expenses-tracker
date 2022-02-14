@@ -1,9 +1,9 @@
-import { VFC } from "react";
-import ExpenseFilter, { IExpenseFilter } from "../ExpenseFilter/ExpensesFilter";
+import { useState, VFC } from "react";
+import ExpenseFilter, { IExpenseFilter } from "./ExpenseFilter/ExpensesFilter";
 import Card from "../UI/Card/Card";
 import ExpenseItem, { IExpenseItem } from "./ExpenseItem";
 
-interface IExpenseItems {
+export interface IExpenseItems {
   items: readonly IExpenseItem[];
 }
 
@@ -14,6 +14,8 @@ interface IExpenseItems {
  * @returns a collection of Expense Items JSX
  */
 const Expenses: VFC<IExpenseItems> = ({ items }) => {
+
+  const [expenseItems, setExpenseItems] = useState<IExpenseItems>({items});
 
   let expensesFilter: IExpenseFilter;
   const submitExpensesFilterHandler = (submittedFilter : IExpenseFilter) => {
