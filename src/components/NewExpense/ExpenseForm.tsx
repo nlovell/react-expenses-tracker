@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { Method } from "@testing-library/react";
+import { ChangeEvent, FormEvent, MouseEventHandler, useState } from "react";
 import { IExpenseItem } from "../Expenses/ExpenseItem";
 import "./NewExpense.css";
 
@@ -12,6 +13,7 @@ type TExpenseClickHandler = (enteredExpenseData: IExpenseItem) => void;
 
 interface INewExpense {
   saveHandler: TExpenseClickHandler;
+  editHandler: any;
 }
 
 // name : (vars : types [, ...]) => return,
@@ -21,7 +23,7 @@ interface INewExpense {
  * @param saveHandler
  * @returns form JSX
  */
-const ExpenseForm = ({ saveHandler }: INewExpense) => {
+const ExpenseForm = ({ saveHandler, editHandler }: INewExpense) => {
   const [userInput, setUserInput] = useState<IExpenseForm>({
     title: "",
     cost: "",
@@ -40,7 +42,7 @@ const ExpenseForm = ({ saveHandler }: INewExpense) => {
 
     const expenseData: IExpenseItem = {
       title: userInput.title,
-      cost: ~~userInput.cost,
+      cost: +userInput.cost,
       date: new Date(userInput.date),
     };
 
@@ -87,6 +89,8 @@ const ExpenseForm = ({ saveHandler }: INewExpense) => {
           </div>
         </div>
         <div>
+          <button className="new-expense__actions" type="button" onClick={editHandler}>Cancel</button>
+
           <button className="new-expense__actions" type="submit">
             Add Expense
           </button>
