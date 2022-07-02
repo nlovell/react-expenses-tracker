@@ -2,6 +2,7 @@ import { useState, VFC } from "react";
 import ExpenseFilter, { IExpenseFilter } from "./ExpenseFilter/ExpensesFilter";
 import Card from "../UI/Card/Card";
 import ExpenseItem, { IExpenseItem } from "./ExpenseItem";
+import ExpensesList from "./ExpensesList";
 
 export interface IExpenseItems {
   items: readonly IExpenseItem[];
@@ -35,22 +36,16 @@ const Expenses: VFC<IExpenseItems> = ({ items }) => {
   };
 
   return (
-    <Card>
+    <li><Card>
       <h2>Expense Filters</h2>
       <ExpenseFilter filterHandler={submitExpensesFilterHandler} />
       <div>
         <h2>Logged Expenses</h2>
 
-        {filteredItems.items.map(({ date, title, cost }) => (
-          <ExpenseItem
-            key={title + date}
-            date={date}
-            title={title}
-            cost={cost}
-          />
-        ))}
+        <ExpensesList items={filteredItems.items} />
       </div>
     </Card>
+    </li>
   );
 };
 
