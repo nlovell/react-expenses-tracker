@@ -3,6 +3,7 @@ import ExpenseFilter, { IExpenseFilter } from "./ExpenseFilter/ExpensesFilter";
 import Card from "../UI/Card/Card";
 import ExpenseItem, { IExpenseItem } from "./ExpenseItem";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 export interface IExpenseItems {
   items: readonly IExpenseItem[];
@@ -35,11 +36,15 @@ const Expenses: VFC<IExpenseItems> = ({ items }) => {
     setFilteredExpenseItems(newItems);
   };
 
+  ExpensesChart(filteredItems);
+
   return (
     <li><Card>
       <h2>Expense Filters</h2>
       <ExpenseFilter filterHandler={submitExpensesFilterHandler} />
       <div>
+
+        <ExpensesChart items={filteredItems.items} />
         <h2>Logged Expenses</h2>
 
         <ExpensesList items={filteredItems.items} />
